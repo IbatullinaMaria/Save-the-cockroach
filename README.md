@@ -14,3 +14,5 @@
    4) меню с кнопками старт и выход. по окончании игры (таракана раздавили) - выводится время, сколько продержался игрок
    
 5. C++, SFML, IDE Visual Studio или Visual Studio Code (или CodeBlocks)
+
+RoadMap: https://docs.google.com/spreadsheets/d/1u6bjcuNgUTujHUAbyr32VEjaeRaxVxIrJIz2put0Zts/edit?usp=sharing
