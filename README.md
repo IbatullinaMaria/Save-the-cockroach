@@ -16,3 +16,4 @@
 5. C++, SFML, IDE Visual Studio или Visual Studio Code (или CodeBlocks)
 
 RoadMap: https://docs.google.com/spreadsheets/d/1u6bjcuNgUTujHUAbyr32VEjaeRaxVxIrJIz2put0Zts/edit?usp=sharing
+план обучения: https://docs.google.com/document/d/1bZid4km2EGNXae2Y1VydkR9uajxEXSFc2x3x6TEZnDo/edit#
