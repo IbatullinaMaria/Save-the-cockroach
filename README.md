@@ -20,4 +20,5 @@
  C++, SFML, IDE Visual Studio
 
 [Roadmap](https://docs.google.com/spreadsheets/d/1u6bjcuNgUTujHUAbyr32VEjaeRaxVxIrJIz2put0Zts/edit?usp=sharing) 
+<br>
 [План обучения](https://docs.google.com/document/d/1DPRrv5-vtFu45MZg0yzUdVi9MZlbZRJWKw-4DHYQXoc/edit?usp=sharing)
