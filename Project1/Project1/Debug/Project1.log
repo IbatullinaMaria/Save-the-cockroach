@@ -1,21 +1,36 @@
 ﻿  main.cpp
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(27,25): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(27,22): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(42,14): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(49,32): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(52,23): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(55,32): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(61,32): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(64,22): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(67,32): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(76,31): warning C4244: =: преобразование "const T" в "int", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(76,31): warning C4244:         with
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(76,31): warning C4244:         [
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(76,31): warning C4244:             T=float
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(76,31): warning C4244:         ]
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(77,31): warning C4244: =: преобразование "const T" в "int", возможна потеря данных
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(77,31): warning C4244:         with
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(77,31): warning C4244:         [
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(77,31): warning C4244:             T=float
-D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(77,31): warning C4244:         ]
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,42): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,42): warning C4244:         with
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,42): warning C4244:         [
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,42): warning C4244:             T=int
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,42): warning C4244:         ]
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,39): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,39): warning C4244:         with
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,39): warning C4244:         [
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,39): warning C4244:             T=int
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(22,39): warning C4244:         ]
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(77,14): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(84,32): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(90,32): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(97,32): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(103,32): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(119,32): warning C4244: =: преобразование "const T" в "int", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(119,32): warning C4244:         with
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(119,32): warning C4244:         [
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(119,32): warning C4244:             T=float
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(119,32): warning C4244:         ]
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(120,36): warning C4244: =: преобразование "const T" в "int", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(120,36): warning C4244:         with
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(120,36): warning C4244:         [
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(120,36): warning C4244:             T=float
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(120,36): warning C4244:         ]
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(121,38): warning C4244: =: преобразование "const T" в "int", возможна потеря данных
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(121,38): warning C4244:         with
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(121,38): warning C4244:         [
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(121,38): warning C4244:             T=float
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(121,38): warning C4244:         ]
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(133,21): warning C4305: =: усечение из "double" в "float"
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(138,21): warning C4305: =: усечение из "double" в "float"
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(153,22): warning C4305: =: усечение из "double" в "float"
+D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Project1\main.cpp(158,22): warning C4305: =: усечение из "double" в "float"
   Project1.vcxproj -> D:\univers\osnovi project\Save the cockroach\Save-the-cockroach\Project1\Debug\Project1.exe
