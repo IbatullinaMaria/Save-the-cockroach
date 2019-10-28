@@ -157,7 +157,7 @@ int main()
 //////////////////////////////ÀÍÈÌÀÖÈß ÄÂÅÐÈ//////////////////////////////
 		if (anim_start == 1) {
 			window.draw(animS);
-			CurrentFrameAnim += 0.002 * time;
+			CurrentFrameAnim += 0.0019 * time;
 			if (CurrentFrameAnim > 4) game_start = true;
 			if ((CurrentFrameAnim <= 4) && (CurrentFrameAnim>=2)){
 			animS.setPosition(-70 * CurrentFrameAnim, -20 * CurrentFrameAnim);
