@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 using namespace sf;
 
@@ -46,6 +47,7 @@ public:
 int main()
 {
 	bool game_start = false;
+	bool newTimer = false;
 	RenderWindow window(sf::VideoMode(800, 600), "Save the cockroach");
 
 
@@ -55,12 +57,6 @@ int main()
 	Sprite hallS;//создаем объект Sprite(спрайт)
 	hallS.setTexture(hallT);//передаём в него объект Texture (текстуры)
 	hallS.setPosition(0, 0);//задаем начальные координаты появления спрайта
-
-	Texture petliT;
-	petliT.loadFromFile("images/petli.png");
-	Sprite petliS;
-	petliS.setTexture(petliT);
-	petliS.setPosition(0, 0);
 
 	Texture startT;
 	startT.loadFromFile("images/start.png");
@@ -94,14 +90,26 @@ int main()
 
 	Clock clock;
 	float CurrentFrame = 0, CurrentFrame1 = 0, CurrentFrameAnim = 0;
-	int xPos, yPos, yPos1, tr, tr1;
+	int xPos, yPos, yPos1, tr, tr1, yPosBalley, trb;
+	int score = 0;
 	bool life = true;
 	int anim_start = 0;
 
 
 	Player p("c.png", 400, 454, 60, 100);
 	Player shoes("adidas.png", 0, -750, 800, 600);
+	Player balley("balley.png", 0, -750, 800, 600);
+	Player bomj("bomj.png", 0, -750, 800, 600);
+	Player moda("moda.png", 0, -750, 800, 600);
+	Player fu("fu.png", 0, -750, 800, 600);
 	Player shoes1("slipper.png", 0, -750, 800, 600);
+
+	Clock gameTimeClock;//переменная игрового времени, будем здесь хранить время игры 
+	int gameTime = 0;//объявили игровое время, инициализировали.
+	Font font;
+	font.loadFromFile("times.ttf");
+	Text text("", font, 20);
+	//text.setColor(Color::Red);
 
 	while (window.isOpen())
 	{
@@ -150,6 +158,7 @@ int main()
 		p.update(time); 
 		shoes.update(time);
 		shoes1.update(time);
+		balley.update(time);
 
 		window.clear();
 		window.draw(hallS);
@@ -157,14 +166,15 @@ int main()
 //////////////////////////////АНИМАЦИЯ ДВЕРИ//////////////////////////////
 		if (anim_start == 1) {
 			window.draw(animS);
-			CurrentFrameAnim += 0.0019 * time;
-			if (CurrentFrameAnim > 4) game_start = true;
-			if ((CurrentFrameAnim <= 4) && (CurrentFrameAnim>=2)){
-			animS.setPosition(-70 * CurrentFrameAnim, -20 * CurrentFrameAnim);
-			if (CurrentFrameAnim <= 4) {
+			CurrentFrameAnim += 0.0011 * time;
+			if (CurrentFrameAnim > 3) game_start = true;
+		//	if ((CurrentFrameAnim <= 4) && (CurrentFrameAnim >= 1)) {
+			//	animS.setPosition(-70 * CurrentFrameAnim, -20 * CurrentFrameAnim);
+			//}
+			if ((CurrentFrameAnim <= 3)&&(CurrentFrameAnim>=1)) {
 				animS.setScale(CurrentFrameAnim, CurrentFrameAnim);
 			}
-			}
+			
 
 		}
 ///////////////////////////НАЧАЛО АНИАЦИИ ДВЕРИ/////////////////////////////
@@ -173,16 +183,18 @@ int main()
 				if (doorS.getGlobalBounds().contains(pos.x, pos.y)) {//а именно левая				
 					doorS.setScale(0, 0);
 					startS.setScale(0, 0);
-					petliS.setScale(0, 0);
 					anim_start = 1;
 				}
 
 		window.draw(doorS);
 		window.draw(startS);
-		window.draw(petliS);
-
+		if ((game_start == false) && (anim_start == 1)) {
+			gameTimeClock.restart();
+		}
 //////////////////////////САМА ИГРА///////////////////////////
 		if (game_start == true) {
+
+			if ((life)&&(game_start)) gameTime = gameTimeClock.getElapsedTime().asSeconds(); //игровое время в секундах идёт вперед, пока жив игрок, перезагружать как time его не надо. оно не обновляет логику игры
 
 			window.draw(bgsprite);
 			window.draw(learnsprite);
@@ -193,12 +205,16 @@ int main()
 			
 				window.draw(shoes.sprite);
 				window.draw(shoes1.sprite);
+				window.draw(balley.sprite);
 				xPos = p.sprite.getPosition().x;
 				yPos = shoes.sprite.getPosition().y;
 				yPos1 = shoes1.sprite.getPosition().y;
+				yPosBalley = balley.sprite.getPosition().y;
 
 ////////////////////////////ТАРАКАН СДОХ///////////////////////////
-				if ((xPos >= 622) && (xPos <= 738) && (yPos == 0)) {
+				if (((xPos >= 622) && (xPos <= 738) && (yPos == 0)) // адидас
+					|| ((xPos >= 70) && (xPos <= 200) && (yPos1 == 0)) // тапок
+					|| ((xPos >= 428) && (xPos <= 475) && (yPosBalley == 0))) {   //балерина
 					life = false;
 				}
 
@@ -214,6 +230,10 @@ int main()
 					shoes.speed = 0.45;
 					shoes1.dir = 3;
 					shoes1.speed = 0.45;
+					balley.dir = 3;
+					balley.speed = 0.45;
+
+					score = gameTime;
 					
 				}
 
@@ -222,14 +242,14 @@ int main()
 					tr = 1;
 				}
 
-				if ((yPos == -750) || (yPos == -749) || (yPos == -748) || (yPos == -747) | (yPos == -746)) {
+				if ((yPos == -750) || (yPos == -749) || (yPos == -748) || (yPos == -747) || (yPos == -746)) {
 					tr = 0;
 				}
 
 				if (life == true) {
 					if (tr == 1) {
 						shoes.dir = 3;
-						shoes.speed = 0.2;
+						shoes.speed = 0.26;
 					}
 
 					if (tr == 0) {
@@ -243,14 +263,14 @@ int main()
 					tr1 = 1;
 				}
 
-				if ((yPos1 == -750) || (yPos1 == -749) || (yPos1 == -748) || (yPos1 == -747) | (yPos1 == -746) || (yPos1 == -745)) {
+				if ((yPos1 == -750) || (yPos1 == -749) || (yPos1 == -748) || (yPos1 == -747) || (yPos1 == -746) || (yPos1 == -745)) {
 					tr1 = 0;
 				}
 
 				if (life == true) {
 					if (tr1 == 1) {
 						shoes1.dir = 3;
-						shoes1.speed = 0.2;
+						shoes1.speed = 0.1;
 					}
 
 					if (tr1 == 0) {
@@ -258,6 +278,39 @@ int main()
 						shoes1.speed = 0.5;
 					}
 				}
+			
+
+
+/////////////////////////////////ДВИЖЕНИЕ НОГИ БАЛЕРИНА///////////////////////////////////
+				if ((yPosBalley == 0) || (yPosBalley == 1) || (yPosBalley == 2) || (yPosBalley == 3) || (yPosBalley == 4) || (yPosBalley == 5)) {
+					trb = 1;
+				}
+
+				if ((yPosBalley == -750) || (yPosBalley == -749) || (yPosBalley == -748) || (yPosBalley == -747) || (yPosBalley == -746) || (yPosBalley == -745)) {
+					trb = 0;
+				}
+
+				if (life == true) {
+					if (trb == 1) {
+						balley.dir = 3;
+						balley.speed = 0.2;
+					}
+
+					if (trb == 0) {
+						balley.dir = 2;
+						balley.speed = 0.45;
+					}
+				}
+
+				
+				std::string s = std::to_string(score);
+				//gameTimeString<<gameTime;
+				if (not life) {
+					text.setString("Your score: " + s);
+					window.draw(text);
+				}
+
+
 			}
 		
 		window.display();
