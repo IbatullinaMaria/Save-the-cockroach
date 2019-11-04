@@ -62,7 +62,7 @@ int main()
 	startT.loadFromFile("images/start.png");
 	Sprite startS;
 	startS.setTexture(startT);
-	startS.setPosition(0, -30);
+	startS.setPosition(0, 0);
 
 	Texture doorT;
 	doorT.loadFromFile("images/door.png");
@@ -75,6 +75,24 @@ int main()
 	Sprite animS;
 	animS.setTexture(animT);
 	animS.setPosition(0, 0);
+
+	Texture bloodT;
+	bloodT.loadFromFile("images/blood.png");
+	Sprite bloodS;
+	bloodS.setTexture(bloodT);
+	bloodS.setPosition(0, 0);
+
+	Texture scoreT;
+	scoreT.loadFromFile("images/scoreF.png");
+	Sprite scoreS;
+	scoreS.setTexture(scoreT);
+	scoreS.setPosition(0, 0);
+
+	Texture numberT;
+	numberT.loadFromFile("images/numbers.png");
+	Sprite numberS;
+	numberS.setTexture(numberT);
+	numberS.setPosition(0, 0);
 
 	Texture bgtexture;
 	bgtexture.loadFromFile("images/b.png");
@@ -178,9 +196,7 @@ int main()
 
 		}
 ///////////////////////////НАЧАЛО АНИАЦИИ ДВЕРИ/////////////////////////////
-		if (event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
-			if (event.key.code == Mouse::Left)
-				if (doorS.getGlobalBounds().contains(pos.x, pos.y)) {//а именно левая				
+		if (Keyboard::isKeyPressed(Keyboard::Enter)){		
 					doorS.setScale(0, 0);
 					startS.setScale(0, 0);
 					anim_start = 1;
@@ -231,9 +247,7 @@ int main()
 					shoes1.dir = 3;
 					shoes1.speed = 0.45;
 					balley.dir = 3;
-					balley.speed = 0.45;
-
-					score = gameTime;
+					balley.speed = 0.45;					
 					
 				}
 
@@ -302,14 +316,22 @@ int main()
 					}
 				}
 
-				
-				std::string s = std::to_string(score);
-				//gameTimeString<<gameTime;
-				if (not life) {
-					text.setString("Your score: " + s);
-					window.draw(text);
-				}
+				if (int(CurrentFrame1 >= 3)) {
+					window.draw(bloodS);
+					window.draw(scoreS);
 
+					score = gameTime;
+					if (score / 10 < 10) {
+						window.draw(numberS);
+					}
+
+					std::string s = std::to_string(score);
+					if (not life) {
+						text.setString("Your score: " + s);
+						window.draw(text);
+					}
+
+				}
 
 			}
 		
